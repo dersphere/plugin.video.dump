@@ -119,6 +119,9 @@ def __get_tree(url, mobile=True):
     req = urllib2.Request(url)
     req.add_header('Accept', ('text/html,application/xhtml+xml,'
                               'application/xml;q=0.9,*/*;q=0.8'))
+    req.add_header('User-Agent', ('Mozilla/5.0 (X11; Linux i686) '
+                                  'AppleWebKit/535.21 (KHTML, like Gecko) '
+                                  'Chrome/19.0.1041.0 Safari/535.21'))
     html = urllib2.urlopen(req).read()
     tree = BeautifulSoup(html, convertEntities=BeautifulSoup.HTML_ENTITIES)
     return tree
