@@ -102,7 +102,6 @@ def __get_videos(tree):
         date_str = video.find('span', {'class': 'video_date'}).string
         month_str, day_str = date_str.split()
         month = MONTHS.get(month_str)
-        print repr(month)
         date = '%02i.%02i.%s' % (int(day_str), month, year)
         videos.append({'title': title,
                        'video_id': video_id,
