@@ -31,7 +31,7 @@ class Plugin_adv(Plugin):
             return []
 
 
-plugin = Plugin_adv('wimp.com', 'plugin.video.wimp', __file__)
+plugin = Plugin_adv('Wimp.com', 'plugin.video.wimp', __file__)
 
 
 @plugin.route('/', default=True)
