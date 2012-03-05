@@ -1,3 +1,4 @@
+import os
 from xbmcswift import Plugin, xbmcplugin, xbmcgui
 import resources.lib.scraper as scraper
 
@@ -107,7 +108,10 @@ def search():
 
 
 def __add_videos(videos):
+    __path = xbmc.translatePath(plugin._plugin.getAddonInfo('path'))
+    icon = os.path.join(__path, 'icon.png')
     items = [{'label': video['title'],
+              'thumbnail': icon,
               'url': plugin.url_for('watch_video',
                                     video_id=video['video_id']),
               'info': {'date': video['date']},
