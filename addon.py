@@ -108,8 +108,8 @@ def search():
 
 
 def __add_videos(videos):
-    __path = xbmc.translatePath(plugin._plugin.getAddonInfo('path'))
-    icon = os.path.join(__path, 'icon.png')
+    p = plugin._plugin.getAddonInfo('path').decode('utf-8')
+    icon = os.path.join(xbmc.translatePath(p), 'icon.png')
     items = [{'label': video['title'],
               'thumbnail': icon,
               'url': plugin.url_for('watch_video',
