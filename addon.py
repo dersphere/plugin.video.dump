@@ -32,7 +32,7 @@ class Plugin_adv(Plugin):
             return []
 
 
-plugin = Plugin_adv('Wimp.com', 'plugin.video.wimp', __file__)
+plugin = Plugin_adv('Dump.com', 'plugin.video.dump', __file__)
 
 
 @plugin.route('/', default=True)
@@ -128,7 +128,7 @@ def __mobile():
 
 
 def log(msg):
-    xbmc.log('%s addon: %s' % ('wimp.com', msg))
+    xbmc.log('%s addon: %s' % ('Dump.com', msg))
 
 if __name__ == '__main__':
     plugin.run()

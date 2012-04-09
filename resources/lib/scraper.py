@@ -4,7 +4,7 @@ from datetime import datetime
 from base64 import b64decode
 from BeautifulSoup import BeautifulSoup
 
-MAIN_URL = 'http://m.wimp.com/'
+MAIN_URL = 'http://m.dump.com/'
 
 MONTHS = {'Jan': 1,
           'Feb': 2,
@@ -99,7 +99,7 @@ def __get_videos(tree):
     for video in tree.findAll('div', {'class': 'video-item'}):
         title = video.find('a').string.strip()
         video_id = video.find('a')['href'].replace(MAIN_URL, '').strip('/')
-        date_str = video.find('span', {'class': 'video_date'}).string
+        date_str = video.find('span', {'class': 'video_date'}).b.string
         month_str, day_str = date_str.split()
         month = MONTHS.get(month_str)
         date = '%02i.%02i.%s' % (int(day_str), month, year)
