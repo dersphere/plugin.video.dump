@@ -99,7 +99,10 @@ def __get_videos(tree):
     for video in tree.findAll('div', {'class': 'video-item'}):
         title = video.find('a').string.strip()
         video_id = video.find('a')['href'].replace(MAIN_URL, '').strip('/')
-        date_str = video.find('span', {'class': 'video_date'}).b.string
+        try:
+            date_str = video.find('span', {'class': 'video_date'}).b.string
+        except AttributeError:
+            date_str = video.find('span', {'class': 'video_date'}).string
         month_str, day_str = date_str.split()
         month = MONTHS.get(month_str)
         date = '%02i.%02i.%s' % (int(day_str), month, year)
