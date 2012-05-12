@@ -131,4 +131,4 @@ def __get_tree(url, mobile=True):
 
 
 def log(msg):
-    print('%s scraper: %s' % ('wimp.com', msg))
+    print('%s scraper: %s' % ('dump.com', msg))
