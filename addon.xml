@@ -11,8 +11,7 @@
     <extension point="xbmc.addon.metadata">
         <language />
         <platform>all</platform>
-        <summary lang="en">Stream Dump.com</summary>
-        <description lang="de">Videos von Dump.com</description>
-        <description lang="en">The Content of Dump.com on your Media Center</description>
+        <summary lang="en">Family Friendly Videos</summary>
+        <description lang="en">Website containing interesting, educational and funny videos that are suitable for all ages. Updated daily.</description>
     </extension>
 </addon>
