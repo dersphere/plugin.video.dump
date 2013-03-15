@@ -47,8 +47,7 @@ class NetworkError(Exception):
 
 
 def get_current_videos():
-    tree = __get_tree(MAIN_URL)
-    return __get_videos(tree)
+    return __get_videos(MAIN_URL)
 
 
 def get_archive_dates():
@@ -66,13 +65,11 @@ def get_archive_dates():
 
 
 def get_archived_videos(archive_id):
-    tree = __get_tree(MAIN_URL + 'archives/%s' % archive_id)
-    return __get_videos(tree)
+    return __get_videos(MAIN_URL + 'archives/%s' % archive_id)
 
 
 def get_search_result(query):
-    tree = __get_tree(MAIN_URL + 'search/%s' % quote(query))
-    return __get_videos(tree)
+    return __get_videos(MAIN_URL + 'search/%s' % quote(query))
 
 
 def get_video_url(video_id):
@@ -86,7 +83,8 @@ def get_video_url(video_id):
     return video_url
 
 
-def __get_videos(tree):
+def __get_videos(url):
+    tree = __get_tree(url)
     videos = []
     page_title = tree.head.title.string
     y = None
