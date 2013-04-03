@@ -17,7 +17,7 @@
 #    along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-from xbmcswift2 import Plugin
+from xbmcswift2 import Plugin, xbmc
 from resources.lib import scraper
 
 plugin = Plugin()
